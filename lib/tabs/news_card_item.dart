@@ -20,7 +20,7 @@ class NewsCardItem extends StatelessWidget {
         );
       },
       child: Container(
-        padding: EdgeInsets.all(8.h),
+        padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 4.w),
         child: Column(
           children: [
             ClipRRect(
@@ -38,9 +38,7 @@ class NewsCardItem extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  SizedBox(height: 5.h,),
                   Text(
                     articles.title ?? "",
                     style: GoogleFonts.poppins(
@@ -51,9 +49,7 @@ class NewsCardItem extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  SizedBox(height: 10.h,),
                   Text(
                     articles.description ?? "",
                     style: GoogleFonts.poppins(
@@ -63,9 +59,7 @@ class NewsCardItem extends StatelessWidget {
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  SizedBox(height: 10.h,),
                   Row(
                     children: [
                       Expanded(

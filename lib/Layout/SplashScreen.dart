@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/my_provider.dart';
 import 'homescreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +19,6 @@ class Splash extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var pro = Provider.of<MyProvider>(context);
     Timer(
         const Duration(seconds: 2),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(

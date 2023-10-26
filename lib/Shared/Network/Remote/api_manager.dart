@@ -34,18 +34,18 @@ class ApiManager {
     return newsResponse;
   }
 
-  static Future<NewsResponse> getSpecifiArticle(String sourceID)async{
-    Uri url = Uri.https(BASE_URL, "/v2/everything",
-        {
-          "apiKey":API_KEY,
-          "sources":sourceID,
-        }
-    );
-    http.Response response=await http.get(url);
-    var jsonData= jsonDecode(response.body);
-    NewsResponse newsResponse=NewsResponse.fromJson(jsonData);
-    return newsResponse;
-  }
+  // static Future<NewsResponse> getSpecificArticle(String sourceID)async{
+  //   Uri url = Uri.https(BASE_URL, "/v2/everything",
+  //       {
+  //         "apiKey":API_KEY,
+  //         "sources":sourceID,
+  //       }
+  //   );
+  //   http.Response response=await http.get(url);
+  //   var jsonData= jsonDecode(response.body);
+  //   NewsResponse newsResponse=NewsResponse.fromJson(jsonData);
+  //   return newsResponse;
+  // }
 
   static Future<NewsResponse> searchNewsData(String sourceID,String search)async{
     Uri url = Uri.https(BASE_URL, "/v2/everything",

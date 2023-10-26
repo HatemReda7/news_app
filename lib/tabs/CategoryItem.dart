@@ -6,12 +6,12 @@ import 'package:islami_app/Models/CategoryModel.dart';
 class CategoryItem extends StatelessWidget {
   CategoryModel categoryModel;
 
-  CategoryItem(this.categoryModel);
+  CategoryItem(this.categoryModel, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: categoryModel.color,
         borderRadius: BorderRadius.only(topRight: Radius.circular(25.r),topLeft: Radius.circular(25.r),bottomRight: Radius.circular(25.r))

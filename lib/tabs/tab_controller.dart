@@ -7,7 +7,7 @@ import 'source_item.dart';
 class TabControllerWidget extends StatefulWidget {
   List<Sources> sources;
 
-  TabControllerWidget(this.sources);
+  TabControllerWidget(this.sources, {super.key});
 
   @override
   State<TabControllerWidget> createState() => _TabControllerWidgetState();
@@ -43,10 +43,10 @@ class _TabControllerWidgetState extends State<TabControllerWidget> {
                 ApiManager.getNewsData(widget.sources[selectedIndex].id ?? ""),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
               if (snapshot.hasError) {
-                return Center(child: Text("Something went wrong!"));
+                return const Center(child: Text("Something went wrong!"));
               }
               var newsList=snapshot.data?.articles??[];
               return Expanded(

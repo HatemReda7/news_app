@@ -8,13 +8,13 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class NewsArticleItem extends StatelessWidget {
   static const String routeName = "";
 
-  NewsArticleItem({super.key});
+  const NewsArticleItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)!.settings.arguments as ArticleModel;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image:
               DecorationImage(image: AssetImage("assets/images/pattern.png")),
           color: Colors.white),
@@ -23,7 +23,7 @@ class NewsArticleItem extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 67.h,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: primary,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
@@ -38,7 +38,7 @@ class NewsArticleItem extends StatelessWidget {
                   color: Colors.white),
             )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           ClipRRect(
@@ -57,21 +57,21 @@ class NewsArticleItem extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xff42505C)),
+                      color: const Color(0xff42505C)),
                 ),
                 SizedBox(
                   height: 15.h,
                 ),
                 Row(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       args.time.substring(0, 10),
                       maxLines: 2,
                       style: GoogleFonts.poppins(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xffA3A3A3)),
+                          color: const Color(0xffA3A3A3)),
                     ),
                   ],
                 ),
@@ -85,20 +85,20 @@ class NewsArticleItem extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w300,
-                          color: Color(0xff42505C))),
+                          color: const Color(0xff42505C))),
                 ),
                 SizedBox(
                   height: 50.h,
                 ),
                 Row(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       "View Full Article",
                       style: GoogleFonts.poppins(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xff42505C)),
+                          color: const Color(0xff42505C)),
                     ),
                   ],
                 ),

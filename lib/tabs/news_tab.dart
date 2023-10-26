@@ -5,7 +5,7 @@ import 'tab_controller.dart';
 class NewsTab extends StatelessWidget {
   String catID;
 
-  NewsTab(this.catID);
+  NewsTab(this.catID, {super.key});
 
   @override
    Widget build(BuildContext context) {
@@ -13,10 +13,10 @@ class NewsTab extends StatelessWidget {
        future: ApiManager.getSources(catID),
        builder: (context, snapshot) {
          if (snapshot.connectionState == ConnectionState.waiting) {
-           return Center(child: CircularProgressIndicator());
+           return const Center(child: CircularProgressIndicator());
          }
          if (snapshot.hasError) {
-           return Center(child: Text("Something went wrong!"));
+           return const Center(child: Text("Something went wrong!"));
          }
          var sources = snapshot.data?.sources ?? [];
          return TabControllerWidget(sources);

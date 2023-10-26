@@ -7,7 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class DrawerTab extends StatelessWidget {
   Function onClick;
 
-  DrawerTab(this.onClick);
+  DrawerTab(this.onClick, {super.key});
 
   static int CAT_ID=1;
   static int SETT_ID=2;
@@ -16,7 +16,7 @@ class DrawerTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width*.8,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
 
       ),
@@ -38,9 +38,9 @@ class DrawerTab extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      ImageIcon(AssetImage("assets/images/Icon awesome-th-list.png")),
-                      SizedBox(width: 15,),
-                      Text(AppLocalizations.of(context)!.categories,style: GoogleFonts.poppins(color: Color(0xff303030),fontSize: 24.sp,fontWeight: FontWeight.w700),),
+                      const ImageIcon(AssetImage("assets/images/Icon awesome-th-list.png")),
+                      const SizedBox(width: 15,),
+                      Text(AppLocalizations.of(context)!.categories,style: GoogleFonts.poppins(color: const Color(0xff303030),fontSize: 24.sp,fontWeight: FontWeight.w700),),
                     ],
                   ),
                 ),
@@ -52,8 +52,8 @@ class DrawerTab extends StatelessWidget {
                   child: Row(
                     children: [
                       Icon(Icons.settings,size: 24.sp,),
-                      SizedBox(width: 15,),
-                      Text(AppLocalizations.of(context)!.settings,style: GoogleFonts.poppins(color: Color(0xff303030),fontSize: 24.sp,fontWeight: FontWeight.w700),),
+                      const SizedBox(width: 15,),
+                      Text(AppLocalizations.of(context)!.settings,style: GoogleFonts.poppins(color: const Color(0xff303030),fontSize: 24.sp,fontWeight: FontWeight.w700),),
                     ],
                   ),
                 ),

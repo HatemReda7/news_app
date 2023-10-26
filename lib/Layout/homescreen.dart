@@ -43,8 +43,8 @@ class _HomeLayoutState extends State<HomeLayout> {
           appBar: searchOpen? PreferredSize(
             preferredSize: Size(412.w, 67.h),
             child: Container(
-              padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
+              padding: const EdgeInsets.all(15),
+                decoration: const BoxDecoration(
                   color: primary,
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(50),bottomLeft: Radius.circular(50))
                 ),
@@ -72,7 +72,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                       focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                       fillColor: Colors.white,
-                        hintText: "Seach Articles",
+                        hintText: "Search Articles",
                         hintStyle: GoogleFonts.poppins(color: primary,fontSize: 14.sp,fontWeight: FontWeight.w400),
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
 
@@ -91,7 +91,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                   padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: Icon(Icons.search,size: 27.sp,),
                 ),
-              ):SizedBox.shrink()
+              ):const SizedBox.shrink()
             ],
             title: Text(onSettingTab?AppLocalizations.of(context)!.settings:(categoryModel==null?AppLocalizations.of(context)!.newsApp:categoryModel!.name)),
           ),

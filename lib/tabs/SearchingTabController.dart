@@ -8,7 +8,7 @@ class SearchingTabController extends StatefulWidget {
   List<Sources> sources;
   String searchArticle;
 
-  SearchingTabController(this.sources,this.searchArticle);
+  SearchingTabController(this.sources,this.searchArticle, {super.key});
 
   @override
   State<SearchingTabController> createState() => _SearchingTabControllerState();
@@ -44,10 +44,10 @@ class _SearchingTabControllerState extends State<SearchingTabController> {
             ApiManager.searchNewsData(widget.sources[selectedIndex].id ?? "",widget.searchArticle),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
               if (snapshot.hasError) {
-                return Center(child: Text("Something went wrong!"));
+                return const Center(child: Text("Something went wrong!"));
               }
               var newsList=snapshot.data?.articles??[];
               return Expanded(

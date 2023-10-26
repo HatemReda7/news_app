@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
               SplashScreen.routeName: (context) => const SplashScreen(),
               HomeLayout.routeName: (context) => const HomeLayout(),
               SettingsTab.routeName: (context) => const SettingsTab(),
-              NewsArticleItem.routeName: (context) => NewsArticleItem(),
+              NewsArticleItem.routeName: (context) => const NewsArticleItem(),
             },
             theme: MyThemeData.lightTheme,
             themeMode: ThemeMode.light,

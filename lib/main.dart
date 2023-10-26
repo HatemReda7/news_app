@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: AppLocalizations.supportedLocales,
             locale: Locale(pro.languageCode),
             debugShowCheckedModeBanner: false,
-            initialRoute: HomeLayout.routeName,
+            initialRoute: SplashScreen.routeName,
             routes: {
               SplashScreen.routeName: (context) => const SplashScreen(),
               HomeLayout.routeName: (context) => const HomeLayout(),

@@ -5,7 +5,6 @@ import 'tab_controller.dart';
 class NewsTab extends StatelessWidget {
   String catID;
 
-
   NewsTab(this.catID);
 
   @override

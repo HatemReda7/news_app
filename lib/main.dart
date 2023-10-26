@@ -8,6 +8,7 @@ import 'Layout/homescreen.dart';
 import 'Shared/styles/myThemeData.dart';
 import 'preference_helper.dart';
 import 'providers/my_provider.dart';
+import 'tabs/News_Article_Item.dart';
 import 'tabs/settings/Settings_Tab.dart';
 
 void main() async {
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
               SplashScreen.routeName: (context) => const SplashScreen(),
               HomeLayout.routeName: (context) => const HomeLayout(),
               SettingsTab.routeName: (context) => const SettingsTab(),
+              NewsArticleItem.routeName: (context) => NewsArticleItem(),
             },
             theme: MyThemeData.lightTheme,
             themeMode: ThemeMode.light,

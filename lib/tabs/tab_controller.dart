@@ -51,7 +51,7 @@ class _TabControllerWidgetState extends State<TabControllerWidget> {
               var newsList=snapshot.data?.articles??[];
               return Expanded(
                 child: ListView.builder(itemBuilder: (context, index) {
-                  return NewsCardItem(newsList[index]);
+                  return NewsCardItem(newsList[index],);
                 },itemCount: newsList.length,),
               );
             },

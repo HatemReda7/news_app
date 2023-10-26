@@ -10,7 +10,6 @@ import 'package:islami_app/tabs/settings/Settings_Tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../tabs/categories_tab.dart';
 import '../tabs/drawer.dart';
-import '../tabs/tab_controller.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "Home Screen";
@@ -118,6 +117,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       onSettingTab=false;
     }else if(id==DrawerTab.SETT_ID){
       onSettingTab=true;
+      categoryModel=null;
     }
     setState(() {
       Navigator.pop(context);

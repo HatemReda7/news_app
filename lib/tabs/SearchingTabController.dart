@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/Shared/Network/Remote/api_manager.dart';
+import 'package:islami_app/tabs/source_item.dart';
 import '../Models/SourcesResponse.dart';
 import 'news_card_item.dart';
 
@@ -22,6 +23,22 @@ class _SearchingTabControllerState extends State<SearchingTabController> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          DefaultTabController(
+            length: widget.sources.length,
+            child: TabBar(
+                onTap: (index) {
+                  selectedIndex = index;
+                  setState(() {});
+                },
+                isScrollable: true,
+                indicatorColor: Colors.transparent,
+                tabs: widget.sources
+                    .map((source) => Tab(
+                  child: SourceItem(source,
+                      widget.sources.indexOf(source) == selectedIndex),
+                ))
+                    .toList()),
+          ),
           FutureBuilder(
             future:
             ApiManager.searchNewsData(widget.sources[selectedIndex].id ?? "",widget.searchArticle),

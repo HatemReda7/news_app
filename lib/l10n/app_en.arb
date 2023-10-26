@@ -3,5 +3,8 @@
   "language": "Language",
   "theme": "Mode",
   "settings": "Settings",
+  "categories": "Categories",
+  "newsApp": "News App!",
+  "pick": "Pick your category of interest",
   "arabic": "Arabic"
 }

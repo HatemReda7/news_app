@@ -3,5 +3,15 @@
   "language": "اللغة",
   "theme": "المظهر",
   "settings": "اعدادات",
+  "categories": "التصنيفات",
+  "newsApp": "تطبيق الأخبار!",
+  "sports": "الرياضة",
+  "general": "عام",
+  "health": "الصحة",
+  "business": "الأعمال",
+  "technology": "التكنولوجيا",
+  "science": "العلوم",
+  "entertainment": "الترفيه",
+  "pick": "اختر فئتك من الفائدة",
   "arabic": "عربي"
 }

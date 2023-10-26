@@ -1,20 +1,35 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
+import 'package:islami_app/Models/NewsResponse.dart';
 import 'package:islami_app/Models/SourcesResponse.dart';
+import 'package:islami_app/Shared/Components/constants.dart';
 
 class ApiManager {
 
-  static Future<SourcesResponse> getSources() async{
-    Uri url = Uri.https("newsapi.org", "/v2/top-headlines/sources",
+  static Future<SourcesResponse> getSources(String catID) async{
+    Uri url = Uri.https(BASE_URL, "/v2/top-headlines/sources",
     {
-      "apiKey":"ed55dbb9aff04e9a9086358b5753f9bf"
+      "apiKey":API_KEY,
+      "category":catID,
     }
     );
     Response response=await http.get(url);
     var jsonData=jsonDecode(response.body);
     SourcesResponse data= SourcesResponse.fromJson(jsonData);
     return data;
+  }
+
+  static Future<NewsResponse> getNewsData(String sourceID)async{
+    Uri url = Uri.https(BASE_URL, "/v2/everything",
+        {
+          "apiKey":API_KEY,
+          "sources":sourceID
+        }
+    );
+    http.Response response=await http.get(url);
+    var jsonData= jsonDecode(response.body);
+    NewsResponse newsResponse=NewsResponse.fromJson(jsonData);
+    return newsResponse;
   }
 }
